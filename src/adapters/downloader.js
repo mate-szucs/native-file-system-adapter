@@ -86,8 +86,8 @@ export class FileHandle {
       const iframe = document.createElement('iframe')
       iframe.hidden = true
       // Angular ServiceWorker bypass, prevents error in Angular router: NG04002 noMatchError
-      const srcParams = options.ngSwBypass
-        ? "?ngsw-bypass=" + options.ngSwBypass
+      const srcParams = options.angularServiceWorkerBypass
+        ? "?ngsw-bypass=" + options.angularServiceWorkerBypass
         : ""
       iframe.src = sw.scope + fileName + srcParams
       document.body.appendChild(iframe)

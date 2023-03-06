@@ -3,7 +3,7 @@ export class FileSystemFileHandle extends FileSystemHandle {
     constructor(adapter: any);
     createWritable(options?: {
         keepExistingData?: boolean;
-        ngSwBypass?: boolean;
+        angularServiceWorkerBypass?: boolean;
     }): Promise<FileSystemWritableFileStream>;
     getFile(): Promise<File>;
     [kAdapter]: any;
