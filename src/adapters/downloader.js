@@ -85,7 +85,11 @@ export class FileHandle {
       // Trigger the download with a hidden iframe
       const iframe = document.createElement('iframe')
       iframe.hidden = true
-      iframe.src = sw.scope + fileName
+      // Angular ServiceWorker bypass, prevents error in Angular router: NG04002 noMatchError
+      const srcParams = options.ngSwBypass
+        ? "?ngsw-bypass=" + options.ngSwBypass
+        : ""
+      iframe.src = sw.scope + fileName + srcParams
       document.body.appendChild(iframe)
     }
 
